@@ -29,4 +29,20 @@ public class PointTest {
         double expected = 2.82;
         assertThat(a.distance(b)).isCloseTo(expected, offset(0.01));
     }
+
+    @Test
+    public void when111To222Then1dot73() {
+        Point a = new Point(1, 1, 1);
+        Point b = new Point(2, 2, 2);
+        double expected = 1.73;
+        assertThat(a.distance3d(b)).isCloseTo(expected, offset(0.01));
+    }
+
+    @Test
+    public void when111To222Then7dot48() {
+        Point a = new Point(1, 2, 3);
+        Point b = new Point(-1, -2, -3);
+        double expected = 7.48;
+        assertThat(a.distance3d(b)).isCloseTo(expected, offset(0.01));
+    }
 }
